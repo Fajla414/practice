@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+
+<body>
+    <ul id="myList">
+    </ul>
+    <script>
+
+        // let abcd = async () =>{
+
+        // }
+
+        // async function hello(name) {
+        //     return 'Hello ' + name;
+        // }
+
+        // const greeing = hello('Mofiz');
+        // console.log(greeing);
+        // greeing.then(res => console.log(res))
+
+
+        async function loadData() {
+            const res = await fetch('https://jsonplaceholder.typicode.com/users');
+            const data = await res.json();
+            displayData(data)
+            return data
+
+        }
+
+        loadData()
+
+        function displayData(data) {
+            const parentNode = document.getElementById('myList');
+            for (let a = 0; a < data.length; a++) {
+                const element = data[a].name;
+                let item = document.createElement('li');
+                item.innerText = element;
+                parentNode.appendChild(item);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
