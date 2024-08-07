@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Repitition</title>
+</head>
+
+<body>
+
+
+    <script>
+        let nums = ['Fajla', 'Pariha', 'Paija', 'Anando', 'Elma', 'Fajla', 'Pariha', 'Paija'];
+        let unuiqueName = [];
+        let duplicate = [];
+        for (let a = 0; a < nums.length; a++) {
+            let item = nums[a];
+            let index = unuiqueName.indexOf(item);
+
+            if (index == -1) {
+                unuiqueName.push(item)
+            }
+            else {
+                duplicate.push(item)
+            }
+
+        }
+        console.log('UnuiqeName', unuiqueName);
+        console.log('Duplicate', duplicate);
+
+
+    </script>
+</body>
+
+</html>
